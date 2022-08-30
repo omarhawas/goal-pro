@@ -3,7 +3,7 @@ import React from "react";
 const GoalPage = () => {
   return (
     <div>
-      <p>This is the goal page</p>
+      <p>GOAL PAGE</p>
     </div>
   );
 };
