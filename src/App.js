@@ -3,7 +3,9 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Auth from "./pages/Auth";
 import GoalPage from "./pages/GoalPage";
-import HomePage from "./pages/HomePage";
+import GoalsPage from "./pages/GoalsPage";
+
+import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 function App() {
   return (
@@ -11,8 +13,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/auth" element={<Auth />} />
-          <Route path="/" element={<HomePage />} />
-          <Route path="/goal" element={<GoalPage />} />
+          <Route path="/goals" element={<GoalsPage />} />
+          <Route path="/goals/:id" element={<GoalPage />} />
         </Routes>
       </BrowserRouter>
     </div>
