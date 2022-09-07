@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Auth = (props) => {
   const [authMode, setAuthMode] = useState("signin");
@@ -36,9 +37,9 @@ const Auth = (props) => {
               />
             </div>
             <div className="d-grid gap-2 mt-3">
-              <button type="submit" className="btn btn-primary">
+              <Link to="/goals" className="btn btn-primary">
                 Submit
-              </button>
+              </Link>
             </div>
             <p className="text-center mt-2">
               Forgot <a href="#">password?</a>
@@ -84,9 +85,9 @@ const Auth = (props) => {
               />
             </div>
             <div className="d-grid gap-2 mt-3">
-              <button type="submit" className="btn btn-primary">
+              <Link to="/" className="btn btn-primary">
                 Submit
-              </button>
+              </Link>
             </div>
             <p className="text-center mt-2">
               Forgot <a href="#">password?</a>
