@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { getGoals } from '../api/goals';
-import { Link } from "react-router-dom";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import GoalCard from "../components/GoalCard";
 
 const GoalsPage = (props) => {
   const [goals, setGoals] = useState([]);
@@ -12,11 +14,14 @@ const GoalsPage = (props) => {
   return (
     <div>
       <p>Homepage/All goals page</p>
-      {goals.map((goal) => (
-        <div key={goal.id}>
-          <Link to={`/goals/${goal.id}`}>{goal.title}</Link>
-        </div>
-      ))}
+
+      <Row>
+        {goals.map((goal) => (
+          <Col key={goal.id} s={12} md={6} lg={4}>
+            <GoalCard goal={goal} />
+          </Col>
+        ))}
+      </Row>
     </div>
   );
 };
