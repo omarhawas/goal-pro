@@ -26,8 +26,9 @@ const getEventData = (goal) => {
 
 const GoalPage = (props) => {
   const [showScheduledItemModal, setShowScheduledItemModal] = useState(false);
-  const [goal, setGoal] = useState([]);
+  const [goal, setGoal] = useState({});
   const eventData = getEventData(mockGoal);
+  const [scheduleItem, setScheduleItem] = useState({});
 
   useEffect(() => {
     const goalData = getGoal();
@@ -35,6 +36,12 @@ const GoalPage = (props) => {
   }, []);
 
   const handleSelectEvent = (event) => {
+    // console.log(event.id);
+    const selectedItem = goal.scheduleItems.find((item) => {
+      // console.log(item.id);
+      return event.id === item.id;
+    });
+    setScheduleItem(selectedItem);
     setShowScheduledItemModal(true);
   };
 
@@ -45,7 +52,6 @@ const GoalPage = (props) => {
   return (
     <div>
       <p>GOAL PAGE</p>
-      {console.log(goal)}
       <Calendar
         localizer={localizer}
         events={eventData}
@@ -57,6 +63,7 @@ const GoalPage = (props) => {
       <ScheduleItemModal
         show={showScheduledItemModal}
         handleClose={handleModalClose}
+        scheduleItem={scheduleItem}
       />
       <Link to="/goals">Back to homepage</Link>
     </div>

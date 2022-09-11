@@ -14,7 +14,6 @@ const GoalsPage = (props) => {
 
   return (
     <div>
-      {console.log(goals)}
       <br />
       <br />
       <Row>
