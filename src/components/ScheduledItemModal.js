@@ -1,11 +1,14 @@
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
-function ScheduleItemModal({ scheduleItem, show, handleClose }) {
+function ScheduleItemModal({ scheduleItem, show, handleClose, goal }) {
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Modal heading</Modal.Title>
+        <Modal.Title>
+          {scheduleItem?.action}
+          {console.log(scheduleItem.action)}
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
       <Modal.Footer>
